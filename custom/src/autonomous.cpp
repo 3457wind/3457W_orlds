@@ -113,7 +113,7 @@ void SAWP() {
   match_loader.set(false);
   driveTo(18,1500,true,8);
   turnToAngle(225,750,true,12);
-  driveTo(32,1750,true,7);
+  driveTo(32,1750,true,8);
   wait(50,msec);
   turnToAngle(180,750,true,12);
   driveTo(46,1750,true,7);

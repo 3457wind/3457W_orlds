@@ -4,6 +4,18 @@ using namespace vex;
 
 extern brain Brain;
 
+// Ryan Externs
+extern motor lower_intake;
+extern motor upper_intake;
+extern digital_out match_loader;
+extern digital_out middle_piston;
+extern digital_out descore;
+extern digital_out match_loader_state;
+extern digital_out descore_state;
+extern digital_out middle_piston_state;
+extern rotation vertical_tracker;
+extern rotation horizontal_tracker;
+
 // VEXcode devices
 extern controller controller_1;
 extern motor left_chassis1;
@@ -20,10 +32,6 @@ extern distance example_distance_sensor;
 extern digital_out example_piston;
 extern rotation horizontal_tracker;
 extern rotation vertical_tracker;
-extern distance front_sensor;
-extern distance left_sensor;
-extern distance right_sensor;
-extern distance back_sensor;
 
 extern motor arm_motor1;
 extern motor arm_motor2;
@@ -50,13 +58,6 @@ extern double vertical_tracker_dist_from_center;
 extern double horizontal_tracker_diameter;
 extern double vertical_tracker_diameter;
 
-// Distance Reset setup 
-extern double front_sensor_offset;
-extern double left_sensor_offset;
-extern double right_sensor_offset;
-extern double back_sensor_offset;
-
-// Advanced Tuning Parameters
 extern bool heading_correction;
 extern bool dir_change_start;
 extern bool dir_change_end;

@@ -1,6 +1,6 @@
 // Format: returnType functionName();
 
-void leftAuton();
+void rtAuton();
 void exampleAuton2();
 void redGoalRush();
 

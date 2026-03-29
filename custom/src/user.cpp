@@ -15,7 +15,7 @@ int applyDeadband(int v, int db) //function defined w output int, and input of i
 }
 
 // input: -100..100  output: -100..100
-double expoStick(double x, double expo)//function defined with output deci and inputs decis x and expo
+double expostick(double x, double expo)//function defined with output deci and inputs decis x and expo
 {
   double sign = (x < 0) ? -1.0 : 1.0;//output deci, if x<0, output -1, else 1 
   double ax = fabs(x) / 100.0; //out deci
@@ -28,19 +28,17 @@ double expoStick(double x, double expo)//function defined with output deci and i
 
 void runAutonomous() {
   int auton_selected = 3;
-  switch (auton_selected) {
+  switch (auton_selected) 
+  {
     case 1:
-      leftAuton();//rightslot2
-      break;
+      rtAuton();//rightslot1
     case 2:
       exampleAuton2();//left
-      break;
     case 3:
-      SAWP();//SAWP_SLOT#3
-      break;
+      SAWP();
+      //SAWP_SLOT#3
     case 4:
       left_4ball();
-      break;
     case 5:
       none();
     case 6:
@@ -49,12 +47,11 @@ void runAutonomous() {
       break;
     case 8:
       alliance_solo();
-      break;
     case 9:
       break;
-    case 10:
+    case 10:  
       break;
-    case 11:
+    case 11:  
       break;
     case 12:
       break;
@@ -177,8 +174,8 @@ double slow_turn_cap = slow_cap;
 double fwd_cap  = fast_fwd_cap  + t * (slow_fwd_cap  - fast_fwd_cap);
 double turn_cap = fast_turn_cap + t * (slow_turn_cap - fast_turn_cap);
 
-double fwd  = expoStick((double)fwd_raw,  0.0);
-double turn = expoStick((double)turn_raw, 0.0);
+double fwd  = expostick((double)fwd_raw,  0.0);
+double turn = expostick((double)turn_raw, 0.0);
 
 double left  = ((fwd * fwd_cap) + (turn * turn_cap));
 double right = ((fwd * fwd_cap) - (turn * turn_cap));

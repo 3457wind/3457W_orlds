@@ -133,7 +133,7 @@ void SAWP() {
   upper_intake.spin(fwd,75,pct);
   lower_intake.spin(fwd,100,pct);
 }
-void leftAuton() {
+void rtAuton() {
   wait(50,msec);
   driveTo(32,1250,true,12);
   match_loader.set(true);

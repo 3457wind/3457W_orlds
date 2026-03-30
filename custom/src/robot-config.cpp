@@ -25,7 +25,7 @@ motor right_chassis2 = motor(PORT18, ratio6_1, false);
 motor right_chassis3 = motor(PORT17, ratio6_1, false);
 motor_group right_chassis = motor_group(right_chassis1, right_chassis2, right_chassis3);
 
-inertial inertial_sensor = inertial(PORT7);
+inertial inertial_sensor = inertial(PORT6);
 
 // RW user control
 motor lower_intake = motor(PORT10, ratio6_1, false);

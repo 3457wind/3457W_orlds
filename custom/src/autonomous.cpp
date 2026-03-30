@@ -133,26 +133,26 @@ void SAWP() {
   upper_intake.spin(fwd,75,pct);
   lower_intake.spin(fwd,100,pct);
 }
-void rtAuton() {
+void rtAuton() { //s1
   wait(50,msec);
-  driveTo(32,1250,true,12);
+  driveTo(31,1250,true,12);
   match_loader.set(true);
   turnToAngle(90,750,true,12);
   lower_intake.spin(fwd,100, pct);
-  driveTo(20,1000,true,7);
+  driveTo(20,1000,true,8);
   wait(250,msec);
-  driveTo(-13,1000,true,5);
+  driveTo(-13,1000,true,8);
   upper_intake.stop(coast);
   match_loader.set(false);
-  turnToAngle(225,1250,true,6);
-  driveTo(32,1750,true,7);
+  turnToAngle(225,1250,true,12);
+  driveTo(32,1750,true,8);
   lower_intake.stop(coast);
-  driveTo(-32,1500,true,7);
-  match_loader.set(false);
-  turnToAngle(90,500,true,6);
-  driveTo(-48,1500,true,9);
-  upper_intake.spin(fwd,100,pct);
-  lower_intake.spin(fwd,100,pct);
+  // driveTo(-32,1500,true,7);
+  // match_loader.set(false);
+  // turnToAngle(90,500,true,6);
+  // driveTo(-48,1500,true,9);
+  // upper_intake.spin(fwd,100,pct);
+  // lower_intake.spin(fwd,100,pct);
 }
 
 void exampleAuton2() {//left

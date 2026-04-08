@@ -1,7 +1,7 @@
 // Format: returnType functionName();
 
 void rtAuton();
-void exampleAuton2();
+void right7long();
 void redGoalRush();
 
 // Ryan Auto

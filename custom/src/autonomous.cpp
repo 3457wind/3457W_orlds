@@ -4,107 +4,9 @@
 #include <ctime>
 #include <cmath>
 #include <thread>
-
 #include "../include/autonomous.h"
 #include "motor-control.h"
 
-// IMPORTANT: Remember to add respective function declarations to custom/include/autonomous.h
-// Call these functions from custom/include/user.cpp
-// Format: returnType functionName() { code }
-
-// Ryan Auto
-
-void leftAuton() // case 2
-{
-  wait(50,msec);
-  driveTo(31,1250,true,12);
-  match_loader.set(true);
-  turnToAngle(-90,750,true,11);
-  lower_intake.spin(fwd,100, pct);
-  driveTo(21,1500,true,11);
-  wait(100,msec);
-  driveTo(-13,750,true,8);
-  match_loader.set(false);
-  driveTo(-25,1250,true,8);
-  upper_intake.spin(fwd,100,pct);
-  wait(1250,msec);
-  upper_intake.stop(coast);
-  driveTo(21,1125,true,9);
-  lower_intake.spin(fwd,75, pct);
-  turnToAngle(-225,1250,true,12);
-  driveTo(31,1750,true,8);
-  wait(100,msec);
-  lower_intake.stop(coast);
-  turnToAngle(-45,1000,true,9);
-  middle_piston.set(true);
-  driveTo(-21,1250,true,8);
-  lower_intake.spin(fwd,100, pct);
-  upper_intake.spin(fwd,75, pct);
-
-}
-
-void alliance_solo() // case 8
-{
-  lower_intake.spin(fwd,90, pct);
-  driveTo(54,3000,true,9);
-  wait(200, msec);
-  turnToAngle(90,1000,true,6);
-  match_loader.set(true);
-  wait(200, msec);
-  driveTo(18,15000,true,6);
-  wait(900,msec);
-  driveTo(-43,1750,true,4);
-  wait(300,msec);
-  upper_intake.spin(fwd,100,pct);
-  wait(1200,msec);
-  upper_intake.stop(coast);
-  match_loader.set(false);
-  driveTo(24,1500,true,6);
-  turnToAngle(225,1250,true,6);
-  driveTo(36,1000,true,9);
-  wait(500,msec);
-  turnToAngle(180,750,true,9);
-  driveTo(54,2750,true,9);
-  turnToAngle(135,500,true,12);
-  
-}
-
-void SAWP() { 
-  wait(50,msec);
-  driveTo(31,1500,true,12);
-  match_loader.set(true);
-  turnToAngle(90,750,true,12);
-  lower_intake.spin(fwd,100, pct);
-  driveTo(21,1250,true,7);
-  wait(500,msec);
-  driveTo(-38,1500,true,6);
-  upper_intake.spin(fwd,75,pct);
-  lower_intake.spin(fwd,100,pct);
-  wait(1250,msec);
-  upper_intake.stop(coast);
-  match_loader.set(false);
-  driveTo(18,1500,true,8);
-  turnToAngle(225,750,true,12);
-  driveTo(32,1750,true,8);
-  wait(50,msec);
-  turnToAngle(180,750,true,12);
-  driveTo(46,1750,true,7);
-  match_loader.set(true);
-  turnToAngle(135,750,true,12);
-  driveTo(-25,1500,6);
-  middle_piston.set(true);
-  upper_intake.spin(fwd,75,pct);
-  wait(1000,msec);
-  upper_intake.stop(coast);
-  middle_piston.set(true);
-  driveTo(48,2000,true,7);
-  turnToAngle(90,750,true,12);
-  driveTo(21,1250,true,7);
-  wait(500,msec);
-  driveTo(-38,1500,true,6);
-  upper_intake.spin(fwd,75,pct);
-  lower_intake.spin(fwd,100,pct);
-}
 void rtAuton() { //s1
   wait(50,msec);
   driveTo(31,1250,true,12);
@@ -132,31 +34,182 @@ void rtAuton() { //s1
   upper_intake.spin(fwd,100,pct);
 }
 
+void leftAuton() // case 2
+{
+  wait(50,msec);
+  driveTo(31,1250,true,12);
+  match_loader.set(true);
+  turnToAngle(-90,750,true,11);
+  lower_intake.spin(fwd,100, pct);
+  driveTo(21,1500,true,11);
+  wait(100,msec);
+  driveTo(-13,750,true,8);
+  match_loader.set(false);
+  driveTo(-25,1250,true,8);
+  upper_intake.spin(fwd,100,pct);
+  wait(1250,msec);
+  upper_intake.stop(coast);
+  driveTo(21,1125,true,9);
+  lower_intake.spin(fwd,75, pct);
+  turnToAngle(-225,1250,true,12);
+  driveTo(31,1750,true,8);
+  wait(100,msec);
+  lower_intake.stop(coast);
+  turnToAngle(-45,1000,true,9);
+  middle_piston.set(true);
+  driveTo(-21,1250,true,8);
+  lower_intake.spin(fwd,100, pct);
+  upper_intake.spin(fwd,75, pct);
+}
+
+void SAWP() { 
+  wait(50,msec);
+  driveTo(31,900,true,12);
+  match_loader.set(true);
+  turnToAngle(90,500,true,11);
+  lower_intake.spin(fwd,100, pct);
+  driveTo(21.5,800,true,12);
+  wait(325,msec);
+  match_loader.set(false);
+  driveTo(-38,1000,true,7);
+  upper_intake.spin(fwd,100,pct);
+  wait(1,sec);
+  upper_intake.stop(brake);
+  driveTo(19,875,true,11);
+  turnToAngle(225,750,true,12);
+  driveTo(31,900,true,12);
+  turnToAngle(180,250,true,12);
+  driveTo(29,900,true,12);
+  wait(50,msec);
+  driveTo(20,900,true,12);
+  match_loader.set(true);
+  turnToAngle(135,250,true,12);
+  driveTo(-23,750,7);
+  middle_piston.set(true);
+  upper_intake.spin(fwd,75,pct);
+  wait(825,msec);
+  upper_intake.stop(brake);
+  middle_piston.set(false);
+  driveTo(49,1500,true,11);
+  turnToAngle(90,250,true,12);
+  driveTo(21,625,true,8);
+  wait(625,msec);
+  driveTo(-38,1000,true,7);
+  upper_intake.spin(fwd,75,pct);
+  lower_intake.spin(fwd,100,pct);
+}
+
 void right7long() {//left
   wait(50,msec);
   driveTo(31,1250,true,12);
   lower_intake.spin(fwd,100, pct);
   turnToAngle(226,1000,true,12);
-  driveTo(31,1500,true,7);
+  driveTo(31,1250,true,7);
   wait(50,msec);
   driveTo(-31,1250,true,8);
   wait(50,msec);
   match_loader.set(true);
-  turnToAngle(90,750,true,12);
-//   driveTo(22,1750,true,12);
-//   wait(750,msec);
-//   driveTo(-13,750,true,8);
-//   match_loader.set(false);
-//   driveTo(-25,1250,true,8);
-//   wait(150,msec);
-//   upper_intake.spin(fwd,100,pct);
+  turnToAngle(90,1500,true,9);
+  driveTo(21.5,1500,true,11);
+  wait(300,msec);
+  lower_intake.stop(coast);
+  driveTo(-13,750,true,8);
+  driveTo(-27,1250,true,7);
+  match_loader.set(false);
+  lower_intake.spin(fwd,100, pct);
+  upper_intake.spin(fwd,100,pct);
 }
+
+void left7long()
+{
+  wait(50,msec);
+  driveTo(31,900,true,12);
+  lower_intake.spin(fwd,100, pct);
+  turnToAngle(-226,900,true,12);
+  driveTo(31,1250,true,7);
+  // turnToAngle(-318,900,true,12);
+  // driveTo(27,900,true,12);
+  // wait(50,msec);
+  // match_loader.set(true);
+  // driveTo(-27,1000,true,10);
+  // wait(50,msec);
+  turnToAngle(-46,800,true,12);
+  driveTo(33,1375,true,10);
+  wait(50,msec);
+  match_loader.set(true);
+  turnToAngle(-90,1000,true,9);
+  driveTo(-24,1250,12);
+  upper_intake.spin(fwd,100,pct);
+  wait(1,sec);
+  upper_intake.stop(brake);
+  driveTo(37,1250,true,12);
+  driveTo(-3,150,true,12);
+  driveTo(4,300,true,12);
+  lower_intake.stop(coast);
+  driveTo(-13,750,true,8);
+  driveTo(-28,1000,true,10);
+  match_loader.set(false);
+  lower_intake.spin(fwd,100, pct);
+  upper_intake.spin(fwd,100,pct);
+  wait(1,sec);
+  upper_intake.stop(coast);
+}
+
 void none()
 {
   lower_intake.spin(fwd,50,pct);
 }
 
-double arm_pid_target = 0, arm_load_target = 60, arm_store_target = 250, arm_score_target = 470;
+void realskills()
+{
+  wait(50,msec);
+  driveTo(31,1000,true,12);
+  match_loader.set(true);
+  turnToAngle(90,500,true,11);
+  lower_intake.spin(fwd,100, pct);
+  driveTo(22,1000,true,12);
+  driveTo(-3,250,true,12);
+  driveTo(6,750,true,12);
+  driveTo(-3,250,true,12);
+  driveTo(6,750,true,12);
+  wait(500,msec);
+  match_loader.set(false);
+  driveTo(-16,700,true,12);
+  turnToAngle(45,500,true,12);
+  driveTo(30,1250,true,12);
+  turnToAngle(90,750,true,11);
+  driveTo(-100,2000,true,10);
+  lower_intake.stop(coast);
+  turnToAngle(315,500,true,12);
+  driveTo(-20,600,true,12);
+  turnToAngle(270,800,true,12);
+  driveTo(-27,1750,true,12);
+  lower_intake.spin(fwd,100,pct);
+  upper_intake.spin(fwd,100,pct);
+  match_loader.set(true);
+  wait(2,sec);
+  upper_intake.stop(coast);
+  driveTo(18,1000,true,11);
+  driveTo(18,1000,true,12);
+  driveTo(-3,250,true,12);
+  driveTo(6,750,true,12);
+  driveTo(-3,250,true,12);
+  driveTo(6,750,true,12);
+  driveTo(-38,1000,true,10);
+  match_loader.set(false);
+  upper_intake.spin(fwd,100,pct);
+  wait(3,sec);
+  upper_intake.stop(coast);
+  driveTo(11,500,false,12);
+  turnToAngle(225,500,true,12);
+  driveTo(16,1000,true,12);
+  turnToAngle(180,500,true,12);
+  driveTo(70,3000,true,12);
+
+
+}
+
+// --------------------------------------------------------------------------------------
 
 /*
  * armPID
@@ -181,7 +234,6 @@ void armPID(double arm_target) {
  */
 void armPIDLoop() {
   while(true) {
-    armPID(arm_pid_target); // Continuously update arm position
     wait(10, msec);
   }
 }
@@ -219,10 +271,7 @@ void intakeThread(){
  * This routine executes a complex sequence to rush, grab, and score mobile goals and rings.
  * It uses multiple threads for simultaneous arm, clamp, and intake control.
  */
-void redGoalRush() {
-  arm_motor.setPosition(arm_load_target, deg);         // Set arm to load position
-  correct_angle = inertial_sensor.rotation();          // Sync correct_angle with inertial sensor
-  arm_pid_target = arm_store_target;                   // Set arm PID target to store position
+void skills() {                  // Set arm PID target to store position
 
   thread al = thread(armPIDLoop);                      // Start arm PID loop in a thread
   thread rc = thread(rushClamp);                       // Start clamp routine in a thread
@@ -286,7 +335,6 @@ void redGoalRush() {
   turnToAngle(45, 400, true);                          // Turn to align for wallstake
 
   al.interrupt();                                      // Stop arm PID thread
-  arm_pid_target = arm_score_target - 100;             // Set arm to scoring position
   thread al2 = thread(armPIDLoop);                     // Start new arm PID thread
 
   moveToPoint(12, 34, 1, 1700, true, 8);               // Move forward to final wallstake scoring position

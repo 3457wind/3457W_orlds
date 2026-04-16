@@ -27,30 +27,31 @@ double expostick(double x, double expo)//function defined with output deci and i
 // Modify autonomous, driver, or pre-auton code below
 
 void runAutonomous() {
-  int auton_selected = 4;
+  int auton_selected = 5;
   switch (auton_selected) 
   {
     case 1:
       rtAuton();//s1
       break;
-    case 2:
+    case 2: 
       leftAuton();//s2
       break;
     case 3:
       SAWP();//s3
       break;
     case 4:
-      right7long();//24
+      right7long();//s4
       break;
     case 5:
-      none();//s5
+      left7long();//s5
       break;
     case 6:
+      realskills();
       break;
     case 7:
+      none();
       break;
     case 8:
-      alliance_solo();
       break;
     case 9:
       break;

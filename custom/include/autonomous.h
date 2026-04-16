@@ -2,10 +2,8 @@
 
 void rtAuton();
 void right7long();
-void redGoalRush();
-
-// Ryan Auto
+void realskills();
 void leftAuton();
+void left7long();
 void none();
-void alliance_solo();
 void SAWP();
